@@ -7,11 +7,11 @@ Input parameters for the module.
 
 | Input                | Description                                   | Defaults  
 | ---------------------|---------------------------------------------|---------
-| aws_bucket_name      | The name of the S3 bucket                     | Required  
+| aws_bucket_name      | The name of the S3 bucket                     |   
 | acl                  | The access rights of the bucket               | private   
 | allowed_headers      | The allowed HTTP headers                      | ["*"]     
 | allowed_methods      | The allowed HTTP methods                      | ["GET"]   
-| allowed_origins      | The domain name of the allowed origin         | Required  
+| allowed_origins      | The domain name of the allowed origin         |   
 
 
 Output
