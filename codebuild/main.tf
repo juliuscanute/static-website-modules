@@ -22,7 +22,7 @@ resource "aws_codebuild_project" "build_project" {
 
   source {
     type            = "GITHUB"
-    location        = "https://github.com/mitchellh/packer.git"
+    location        = "https://github.com/juliuscanute/hugo-template-website"
     git_clone_depth = 1
   }
 
