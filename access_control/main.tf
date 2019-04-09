@@ -95,6 +95,6 @@ data "aws_iam_policy_document" "aws_code_build_policy" {
 }
 
 resource "aws_s3_bucket_policy" "aws_code_build_access" {
-  bucket = "${s3_bucket_id}"
+  bucket = "${var.s3_bucket_id}"
   policy = "${data.aws_iam_policy_document.aws_code_build_policy.json}"
 }
