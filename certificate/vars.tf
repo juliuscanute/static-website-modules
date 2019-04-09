@@ -7,3 +7,8 @@ variable "alternative_names" {
   description = "An example of a list in Terraform"
   type = "list"
 }
+
+variable "zone_id" {
+  description = "Zone ID of the primary domain"
+  type = "string"
+}
