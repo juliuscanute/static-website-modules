@@ -40,6 +40,47 @@ EOF
 }
 
 data "aws_iam_policy_document" "aws_code_build_policy" {
+
+  statement {
+    actions = [
+      "logs:CreateLogGroup"]
+    resources = [
+      "*"]
+
+    principals {
+      type = "AWS"
+      identifiers = [
+        "${aws_iam_role.aws_code_build_role.id}"]
+    }
+  }
+
+  statement {
+    actions = [
+      "logs:CreateLogStream"]
+    resources = [
+      "*"]
+
+    principals {
+      type = "AWS"
+      identifiers = [
+        "${aws_iam_role.aws_code_build_role.id}"]
+    }
+  }
+
+  statement {
+    actions = [
+      "logs:PutLogEvents"]
+    resources = [
+      "*"]
+
+    principals {
+      type = "AWS"
+      identifiers = [
+        "${aws_iam_role.aws_code_build_role.id}"]
+    }
+  }
+
+
   statement {
     actions = [
       "s3:GetObject"]
