@@ -18,3 +18,10 @@ variable "alias_health_check" {
   type = "string"
   default = "false"
 }
+
+
+variable "existing" {
+  description = "Existing Record"
+  type = "string"
+  default = "false"
+}
