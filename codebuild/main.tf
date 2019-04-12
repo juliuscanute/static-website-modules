@@ -20,6 +20,11 @@ resource "aws_codebuild_project" "build_project" {
     image_pull_credentials_type = "SERVICE_ROLE"
   }
 
+  environment_variable {
+    "name"  = "BUCKET_NAME"
+    "value" = "${var.aws_bucket_name}"
+  }
+
   source {
     type            = "GITHUB"
     location        = "https://github.com/juliuscanute/hugo-template-website"
