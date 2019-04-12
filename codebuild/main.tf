@@ -25,7 +25,7 @@ resource "aws_codebuild_project" "build_project" {
     }
 
   }
-  
+
   source {
     type            = "GITHUB"
     location        = "https://github.com/juliuscanute/hugo-template-website"

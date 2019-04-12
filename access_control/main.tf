@@ -63,7 +63,9 @@ resource "aws_ecr_repository_policy" "repository_policy" {
         {
             "Sid": "new policy",
             "Effect": "Allow",
-            "Principal": "*",
+            "Principal": {
+              "Service": "codebuild.amazonaws.com"
+            },
             "Action": [
                 "ecr:BatchGetImage",
                 "ecr:BatchCheckLayerAvailability",
