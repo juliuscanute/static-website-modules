@@ -18,13 +18,14 @@ resource "aws_codebuild_project" "build_project" {
     image                       = "${aws_ecr_repository.build_image.repository_url}:latest"
     type                        = "LINUX_CONTAINER"
     image_pull_credentials_type = "SERVICE_ROLE"
-  }
 
-  environment_variable {
-    "name"  = "BUCKET_NAME"
-    "value" = "${var.aws_bucket_name}"
-  }
+    environment_variable {
+      "name"  = "BUCKET_NAME"
+      "value" = "${var.aws_bucket_name}"
+    }
 
+  }
+  
   source {
     type            = "GITHUB"
     location        = "https://github.com/juliuscanute/hugo-template-website"
