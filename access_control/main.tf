@@ -52,32 +52,6 @@ resource "aws_iam_role_policy" "aws_codebuild_policy" {
 POLICY
 }
 
-
-resource "aws_ecr_repository_policy" "repository_policy" {
-  repository = "${var.repository_policy_name}"
-
-  policy = <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "CodeBuildAccess",
-            "Effect": "Allow",
-            "Principal": {
-              "Service": "codebuild.amazonaws.com"
-            },
-            "Action": [
-                "ecr:BatchGetImage",
-                "ecr:BatchCheckLayerAvailability",
-                "ecr:GetDownloadUrlForLayer",
-            ]
-        }
-    ]
-}
-EOF
-}
-
-
 data "aws_iam_policy_document" "aws_code_build_policy" {
   statement {
     actions = [
