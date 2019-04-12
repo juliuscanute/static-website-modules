@@ -61,7 +61,7 @@ resource "aws_ecr_repository_policy" "repository_policy" {
     "Version": "2008-10-17",
     "Statement": [
         {
-            "Sid": "new policy",
+            "Sid": "CodeBuildAccess",
             "Effect": "Allow",
             "Principal": {
               "Service": "codebuild.amazonaws.com"
