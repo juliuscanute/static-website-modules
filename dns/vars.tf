@@ -6,11 +6,13 @@ variable "domain_name" {
 variable "alias_domain_name" {
   description = "Domain Name Alias"
   type = "string"
+  default = ""
 }
 
 variable "alias_zone_id" {
   description = "Zone ID Alias"
   type = "string"
+  default = ""
 }
 
 variable "alias_health_check" {
@@ -18,7 +20,6 @@ variable "alias_health_check" {
   type = "string"
   default = "false"
 }
-
 
 variable "existing" {
   description = "Existing Record"
