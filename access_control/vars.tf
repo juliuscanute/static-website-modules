@@ -13,7 +13,3 @@ variable origin_iam_arn {
 variable codebuild_role_name {
   description = "Codebuild role name"
 }
-
-variable repository_policy_name {
-  description = "Repository policy name"
-}
