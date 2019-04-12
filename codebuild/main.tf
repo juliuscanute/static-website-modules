@@ -1,8 +1,3 @@
-
-resource "aws_ecr_repository" "build_image" {
-  name = "${var.build_repository_name}"
-}
-
 resource "aws_codebuild_project" "build_project" {
   name          = "${var.project_name}"
   description   = "${var.project_description}"
@@ -15,7 +10,7 @@ resource "aws_codebuild_project" "build_project" {
 
   environment {
     compute_type                = "BUILD_GENERAL1_SMALL"
-    image                       = "${aws_ecr_repository.build_image.repository_url}:latest"
+    image                       = "${var.build_repository_name}"
     type                        = "LINUX_CONTAINER"
     image_pull_credentials_type = "SERVICE_ROLE"
 

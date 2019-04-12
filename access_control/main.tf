@@ -58,7 +58,7 @@ resource "aws_ecr_repository_policy" "repository_policy" {
 
   policy = <<EOF
 {
-    "Version": "2008-10-17",
+    "Version": "2012-10-17",
     "Statement": [
         {
             "Sid": "CodeBuildAccess",
@@ -69,7 +69,7 @@ resource "aws_ecr_repository_policy" "repository_policy" {
             "Action": [
                 "ecr:BatchGetImage",
                 "ecr:BatchCheckLayerAvailability",
-                "ecr:GetDownloadUrlForLayer"
+                "ecr:GetDownloadUrlForLayer",
             ]
         }
     ]
@@ -78,8 +78,46 @@ EOF
 }
 
 
-
 data "aws_iam_policy_document" "aws_code_build_policy" {
+  statement {
+    actions = [
+      "s3:GetObject"]
+    resources = [
+      "${var.s3_bucket_arn}/*"]
+
+    principals {
+      type = "AWS"
+      identifiers = [
+        "${aws_iam_role.aws_code_build_role.id}"]
+    }
+  }
+
+  statement {
+    actions = [
+      "s3:PutObject"]
+    resources = [
+      "${var.s3_bucket_arn}/*"]
+
+    principals {
+      type = "AWS"
+      identifiers = [
+        "${aws_iam_role.aws_code_build_role.id}"]
+    }
+  }
+
+
+  statement {
+    actions = [
+      "s3:ListBucket"]
+    resources = [
+      "${var.s3_bucket_arn}"]
+
+    principals {
+      type = "AWS"
+      identifiers = [
+        "${aws_iam_role.aws_code_build_role.id}"]
+    }
+  }
 
   statement {
     actions = [
