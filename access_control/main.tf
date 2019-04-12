@@ -62,7 +62,7 @@ data "aws_iam_policy_document" "aws_code_build_policy" {
     principals {
       type = "AWS"
       identifiers = [
-        "${aws_iam_role.aws_code_build_role.id}"]
+        "${aws_iam_role.aws_code_build_role.arn}"]
     }
   }
 
@@ -75,7 +75,7 @@ data "aws_iam_policy_document" "aws_code_build_policy" {
     principals {
       type = "AWS"
       identifiers = [
-        "${aws_iam_role.aws_code_build_role.id}"]
+        "${aws_iam_role.aws_code_build_role.arn}"]
     }
   }
 
@@ -89,7 +89,7 @@ data "aws_iam_policy_document" "aws_code_build_policy" {
     principals {
       type = "AWS"
       identifiers = [
-        "${aws_iam_role.aws_code_build_role.id}"]
+        "${aws_iam_role.aws_code_build_role.arn}"]
     }
   }
 
