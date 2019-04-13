@@ -3,6 +3,11 @@ variable domain_name {
   type = "string"
 }
 
+variable zone_id {
+  description = "Zone ID of the server"
+  type = "string"
+}
+
 variable "alternative_names" {
   description = "An example of a list in Terraform"
   type = "list"
