@@ -26,3 +26,9 @@ variable "existing" {
   type = "string"
   default = "false"
 }
+
+variable "create_record" {
+  description = "Existing Record"
+  type = "string"
+  default = "false"
+}
