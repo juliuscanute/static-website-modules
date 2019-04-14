@@ -9,6 +9,6 @@ variable zone_id {
 }
 
 variable "alternative_names" {
-  description = "An example of a list in Terraform"
+  description = "Alternative names for the domain"
   type = "list"
 }
